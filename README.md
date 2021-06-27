@@ -2,11 +2,16 @@
 This repo will serve as a boilerplate skeleton for modern python apps. It will use the most wildly popular projects with incredible community support. This blueprint will only use the 
 open source projects as dependencies.
 
-CNCF Projects will be given priority:
-https://www.cncf.io/projects/
+## Setup for Development
+```bash
+$ pip install -r requirements-dev.txt
+```
 
-Testdriven.io Code Quality:
-https://testdriven.io/blog/python-code-quality/
-
-Awesome Flake8 Extentions:
-https://github.com/DmytroLitvinov/awesome-flake8-extensions
+## Code Quality Check and Unit Testing
+To check if the code is upholding enforced standards, run:
+```bash
+$ black .
+$ flake8 .
+$ coverage run -m pytest -v
+$ safety check
+```
