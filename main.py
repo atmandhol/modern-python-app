@@ -1,8 +1,8 @@
-from fastapi import FastAPI
+from flask import Flask, json, jsonify, make_response
 
-app = FastAPI()
+app = Flask(__name__)
 
+@app.route("/")
+def hello_world():
+    return make_response(jsonify({"status": "OK"}))
 
-@app.get("/")
-async def read_root():
-    return {"Hello": "World"}
