@@ -7,4 +7,4 @@ RUN pip3 install --upgrade pip
 RUN pip3 install --no-cache-dir -r requirements.txt
 
 EXPOSE $PORT
-CMD ["gunicorn", "start:app", "--workers=5", "--threads=4", "--keep-alive=60", "--worker-class=gthread"]
+CMD ["gunicorn", "main:app", "--workers=5", "--threads=4", "--keep-alive=60", "--worker-class=gthread"]
