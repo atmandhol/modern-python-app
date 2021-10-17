@@ -1,4 +1,6 @@
 [![GPLv3 License](https://img.shields.io/badge/License-GPL%20v3-yellow.svg)](https://opensource.org/licenses/)
+![Github Actions CI](https://github.com/atmandhol/modern-python-app/actions/workflows/ci.yaml/badge.svg)
+
 
 # Modern Python App Blueprint
 This repo will serve as a boilerplate skeleton for modern python apps. It will use popular projects with incredible community support. This blueprint will only use the open source projects as dependencies.
