@@ -1,35 +1,55 @@
 name: CI Workflow
 
-on: [push]
+on: [ push ]
+
+# on:
+#   push:
+#     branches: [ master ]
 
 jobs:
   build:
     runs-on: ubuntu-latest
+
     strategy:
       matrix:
-        python-version: [3.6, 3.7, 3.8, 3.9]
+        python-version: [3.7, 3.8, 3.9]
 
     steps:
+      # Checkout your repo code
       - uses: actions/checkout@v2
+      
+      # Setup your CI build environment
       - name: Set up Python ${{ matrix.python-version }}
         uses: actions/setup-python@v2
         with:
-          python-version: ${{ matrix.python-version }}
-
+          python-version: 3.7
+      
+      # Install Dependencies
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements-dev.txt
-
+      
+      # Check for Linting errors
       - name: Lint with flake8 and black
         run: |
           black .
           flake8 .
-
+      
+      # Run a vulnerability scan on Project dependencies
       - name: Safety check
         run: |
           safety check
-
+      # Run your unit test suite
       # - name: Test with pytest and coverage
       #   run: |
       #     coverage run -m pytest -v
+
+      # Build and push your image to Docker Hub
+      - name: Build and push Docker image
+        uses: docker/build-push-action@v1.1.0
+        with:
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
+          repository: ${{ secrets.DOCKER_USERNAME }}/modern-python-app
+          tags: ${{ github.sha }}, latest
