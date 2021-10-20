@@ -5,4 +5,4 @@ app = Flask(__name__)
 
 @app.route("/")
 def hello_world():
-    return make_response(jsonify({"message": "Hello World!"}))
+    return make_response(jsonify({"message": "Welcome to GitOps!"}))

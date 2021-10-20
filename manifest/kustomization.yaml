@@ -9,6 +9,3 @@ images:
 - name: adhol/modern-python-app
   newName: adhol/modern-python-app
   newTag: a0c8a4cddc8d56bdc4019dfe6afd5bf069047f8e
-- name: hello-gitops
-  newName: adhol/modern-python-app
-  newTag: 28fb93dc4a2253baed84481068c23835728cb182

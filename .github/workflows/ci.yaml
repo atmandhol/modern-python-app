@@ -68,7 +68,7 @@ jobs:
         DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
       run: |
        cd manifest
-       kustomize edit set image hello-gitops=$DOCKER_USERNAME/modern-python-app:$GITHUB_SHA
+       kustomize edit set image adhol/modern-python-app=$DOCKER_USERNAME/modern-python-app:$GITHUB_SHA
        mkdir -p ../deployment
        kustomize build . > ../deployment/manifest.yaml
         
