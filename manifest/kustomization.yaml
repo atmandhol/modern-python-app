@@ -8,4 +8,4 @@ namespace: default
 images:
 - name: hello-gitops
   newName: adhol/modern-python-app
-  newTag: initial
+  newTag: 5a22318574704395b85781eee8a42f0079106d56
