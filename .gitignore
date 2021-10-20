@@ -6,7 +6,7 @@ __pycache__/
 playground.py
 # C extensions
 *.so
-
+.secret
 # Distribution / packaging
 .Python
 build/

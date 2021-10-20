@@ -67,7 +67,7 @@ jobs:
       env:
         DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
       run: |
-       cd kustomize/base
+       cd manifest
        kustomize edit set image hello-gitops=$DOCKER_USERNAME/modern-python-app:$GITHUB_SHA
        cat kustomization.yaml
         
@@ -78,3 +78,5 @@ jobs:
         git commit -am "Bump docker tag"
     - name: Push changes
       uses: ad-m/github-push-action@master
+      with:
+        github_token: ${{ secrets.GH_TOKEN }}
