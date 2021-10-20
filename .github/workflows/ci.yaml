@@ -69,7 +69,8 @@ jobs:
       run: |
        cd manifest
        kustomize edit set image hello-gitops=$DOCKER_USERNAME/modern-python-app:$GITHUB_SHA
-       cat kustomization.yaml
+       mkdir -p ../deployment
+       kustomize build . > ../deployment/manifest.yaml
         
     - name: Commit files
       run: |

@@ -6,6 +6,6 @@ resources:
 - ingress.yaml
 namespace: default
 images:
-- name: hello-gitops
+- name: adhol/modern-python-app
   newName: adhol/modern-python-app
   newTag: 5a22318574704395b85781eee8a42f0079106d56

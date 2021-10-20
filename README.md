@@ -77,7 +77,7 @@ spec:
     namespace: default
     server: 'https://kubernetes.default.svc'
   source:
-    path: manifest
+    path: deployment
     repoURL: 'https://github.com/atmandhol/modern-python-app'
     targetRevision: HEAD
   project: default
