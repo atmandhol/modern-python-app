@@ -35,7 +35,7 @@ spec:
       - env:
         - name: PORT
           value: "8080"
-        image: adhol/modern-python-app:48cc4bd88d2876194d67fe7fa6c96b6c976b4bd0
+        image: adhol/modern-python-app:13c384be5bd1c8c02e63e8a0286a62101aecc60f
         name: modern-python-app
         ports:
         - containerPort: 8080
