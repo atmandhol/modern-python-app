@@ -8,4 +8,4 @@ namespace: default
 images:
 - name: adhol/modern-python-app
   newName: adhol/modern-python-app
-  newTag: a0c8a4cddc8d56bdc4019dfe6afd5bf069047f8e
+  newTag: 48cc4bd88d2876194d67fe7fa6c96b6c976b4bd0
